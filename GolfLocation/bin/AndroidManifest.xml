@@ -7,6 +7,12 @@
     <uses-sdk
         android:minSdkVersion="8"
         android:targetSdkVersion="18" />
+    
+    <uses-feature android:name="android.hardware.location.gps" android:required="true" />
+    
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+	<uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -43,5 +49,4 @@
             android:label="@string/menu_course4">
         </activity>
     </application>
-
 </manifest>

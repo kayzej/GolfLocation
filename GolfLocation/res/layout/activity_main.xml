@@ -12,7 +12,7 @@
  	    android:id="@+id/label" 
  	    android:layout_width="fill_parent"
         android:layout_height="wrap_content" 
-        android:text="@string/Golf" />
+        android:text="golf" />
  	
  	<ImageView
  	    android:id="@+id/Flag"
@@ -31,4 +31,13 @@
  	    android:layout_below="@id/Flag"
  	    android:onClick="ListView"
  	    android:text="@string/List"/>
+ 	
+ 	<Button 
+ 	    android:id="@+id/GPSRefresh"
+ 	    android:layout_width="wrap_content"
+ 	    android:layout_height="wrap_content"
+ 	    android:layout_centerInParent="true"
+ 	    android:layout_below="@id/List"
+ 	    android:onClick="GPSRefresh"
+ 	    android:text="@string/GPSRefresh"/>
 </RelativeLayout>
