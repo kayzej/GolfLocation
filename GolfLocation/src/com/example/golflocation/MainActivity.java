@@ -1,13 +1,17 @@
 package com.example.golflocation;
 
 import java.util.ArrayList;
+import java.util.Locale;
 
 import com.kayzej.services.GPSTracker;
 
 import android.os.Bundle;
 import android.speech.RecognizerIntent;
+import android.speech.tts.TextToSpeech;
+import android.speech.tts.TextToSpeech.OnInitListener;
 import android.util.Log;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 //import android.view.Window;
@@ -16,9 +20,13 @@ import android.app.Activity;
 import android.content.Intent;
 //import android.view.Menu;
 
-public class MainActivity extends Activity {
-
+public class MainActivity extends Activity implements OnInitListener {
+//public class MainActivity extends Activity{
 	protected static final int REQUEST_OK = 1;
+	
+	private TextToSpeech tts;
+	
+	private GPSTracker gps;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -26,11 +34,25 @@ public class MainActivity extends Activity {
 		//requestWindowFeature(Window.FEATURE_NO_TITLE);
         //getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
         //WindowManager.LayoutParams.FLAG_FULLSCREEN)
+		tts = new TextToSpeech(this, this);
+		gps = new GPSTracker(this);
+		setContentView(R.layout.activity_main);
 		
-		GPSTracker gps = new GPSTracker(this);
+		//View v = this.getCurrentFocus();
 		
+		//GPSRefresh(v);
+	}
+	
+	public void ListView(View view){
+		//Open the ListView
+		startActivity(new Intent(MainActivity.this,CourseList.class));
+	}
+	
+	public void GPSRefresh(View view){
+	
 		String alat;
 		String along;
+		gps.getLocation();
 		
 		if(gps.canGetLocation()){
 			double latitude = gps.getLatitude();
@@ -49,46 +71,6 @@ public class MainActivity extends Activity {
 		}
 		
 		TextView text = (TextView) findViewById(R.id.label);
-		
-		setContentView(R.layout.activity_main);
-		
-		text = (TextView) findViewById(R.id.label);
-		text.setText("longitude: " + along + " latitude: " + alat);
-	}
-	
-	public void ListView(View view){
-		//Open the ListView
-		startActivity(new Intent(MainActivity.this,CourseList.class));
-	}
-	
-	public void GPSRefresh(View view){
-		//double latitude = gps.getLatitude();
-		//double longitude = gps.getLongitude();
-		Log.i("GPSREFRESH, ", "Button is doing step 1");
-		GPSTracker locgps = new GPSTracker(this);
-		
-		String alat;
-		String along;
-		
-		if(locgps.canGetLocation()){
-			double latitude = locgps.getLatitude();
-			double longitude = locgps.getLongitude();
-			
-			alat = String.valueOf(latitude);
-			along = String.valueOf(longitude);
-			
-			Log.i("latitude", alat);
-			Log.i("longitude", along);
-		}
-		else{
-			alat = "nope";
-			along = "nope";
-			locgps.showSettingsAlert();
-		}
-		
-		TextView text = (TextView) findViewById(R.id.label);
-		
-		setContentView(R.layout.activity_main);
 		
 		text = (TextView) findViewById(R.id.label);
 		text.setText("longitude: " + along + " latitude: " + alat);
@@ -112,6 +94,36 @@ public class MainActivity extends Activity {
         	((TextView)findViewById(R.id.SpeechText)).setText(thingsYouSaid.get(0));
         }
     }
+
+	@Override
+	public void onInit(int code) {
+		if (code==TextToSpeech.SUCCESS) {
+			tts.setLanguage(Locale.getDefault());
+		} else {
+			tts = null;
+			Toast.makeText(this, "Failed to initialize TTS engine.", Toast.LENGTH_SHORT).show();
+		}
+	}
+	
+	public void TTSTouch(View v){
+		if (tts!=null) {
+			String text = ((EditText)findViewById(R.id.SayThis)).getText().toString();
+			if (text!=null) {
+				if (!tts.isSpeaking()) {
+					tts.speak(text, TextToSpeech.QUEUE_FLUSH, null);
+				}
+			}
+		}
+	}
+	
+	@Override
+	protected void onDestroy() {
+		if (tts!=null) {
+			tts.stop();
+            tts.shutdown();
+		}
+		super.onDestroy();
+	}
 	
 //	@Override
 //	public boolean onCreateOptionsMenu(Menu menu) {

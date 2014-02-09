@@ -57,4 +57,23 @@
        	android:contentDescription="@string/desc"
        	android:onClick="SpeechButton"
         android:src="@android:drawable/ic_btn_speak_now" />
+ 	 <EditText
+ 	     android:id="@+id/SayThis"
+ 	     android:layout_width="wrap_content"
+ 	     android:layout_height="wrap_content"
+ 	     android:layout_below="@+id/SpeechButton"
+ 	     android:layout_centerHorizontal="true"
+ 	     android:layout_marginTop="19dp"
+ 	     android:ems="10"
+ 	     android:text="Hello world!" />
+
+ 	 <Button
+ 	     android:id="@+id/TalkButton"
+ 	     android:layout_width="wrap_content"
+ 	     android:layout_height="wrap_content"
+ 	     android:layout_below="@id/SayThis"
+ 	     android:layout_centerHorizontal="true"
+ 	     android:layout_marginTop="14dp"
+ 	     android:onClick="TTSTouch"
+ 	     android:text="Say It" />
 </RelativeLayout>
