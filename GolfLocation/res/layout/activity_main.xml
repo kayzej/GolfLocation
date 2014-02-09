@@ -12,7 +12,7 @@
  	    android:id="@+id/label" 
  	    android:layout_width="fill_parent"
         android:layout_height="wrap_content" 
-        android:text="golf" />
+        android:text="@string/Golf" />
  	
  	<ImageView
  	    android:id="@+id/Flag"
@@ -40,4 +40,21 @@
  	    android:layout_below="@id/List"
  	    android:onClick="GPSRefresh"
  	    android:text="@string/GPSRefresh"/>
+ 	<TextView 
+ 	    android:id="@+id/SpeechText" 
+ 	    android:layout_width="fill_parent"
+        android:layout_height="wrap_content" 
+        android:layout_below="@id/GPSRefresh"
+        android:text="@string/Golf" />
+ 	 <ImageButton
+        android:id="@+id/SpeechButton"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/SpeechText"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="10dp"
+        android:layout_marginTop="37dp"
+       	android:contentDescription="@string/desc"
+       	android:onClick="SpeechButton"
+        android:src="@android:drawable/ic_btn_speak_now" />
 </RelativeLayout>
