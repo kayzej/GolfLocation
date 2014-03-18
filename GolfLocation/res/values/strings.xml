@@ -12,4 +12,5 @@
 	<string name="menu_course3">Course3</string>
 	<string name="menu_course4">Course4</string>
 	<string name="GPSRefresh">Refresh GPS</string>
+	<string name="sayIt">Say It!</string>
 </resources>

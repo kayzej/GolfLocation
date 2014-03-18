@@ -23,49 +23,32 @@
  	    android:contentDescription="@string/desc"
  	    android:gravity="center_vertical|center_horizontal"
  	    android:src="@drawable/icon" />
- 	<Button
- 	    android:id="@+id/List"
- 	    android:layout_width="wrap_content"
- 	    android:layout_height="wrap_content"
- 	    android:layout_centerInParent="true"
- 	    android:layout_below="@id/Flag"
- 	    android:onClick="ListView"
- 	    android:text="@string/List"/>
  	
- 	<Button 
- 	    android:id="@+id/GPSRefresh"
- 	    android:layout_width="wrap_content"
- 	    android:layout_height="wrap_content"
- 	    android:layout_centerInParent="true"
- 	    android:layout_below="@id/List"
- 	    android:onClick="GPSRefresh"
- 	    android:text="@string/GPSRefresh"/>
+ 	<Button
+ 	     android:id="@+id/GPSRefresh"
+ 	     android:layout_width="wrap_content"
+ 	     android:layout_height="wrap_content"
+ 	     android:layout_below="@+id/Flag"
+ 	     android:layout_centerHorizontal="true"
+ 	     android:onClick="GPSRefresh"
+ 	     android:text="@string/GPSRefresh" />
+ 		 
  	<TextView 
  	    android:id="@+id/SpeechText" 
  	    android:layout_width="fill_parent"
         android:layout_height="wrap_content" 
         android:layout_below="@id/GPSRefresh"
         android:text="@string/Golf" />
- 	 <ImageButton
-        android:id="@+id/SpeechButton"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/SpeechText"
-        android:layout_centerHorizontal="true"
-        android:layout_margin="10dp"
-        android:layout_marginTop="37dp"
-       	android:contentDescription="@string/desc"
-       	android:onClick="SpeechButton"
-        android:src="@android:drawable/ic_btn_speak_now" />
  	 <EditText
  	     android:id="@+id/SayThis"
+ 	     android:inputType="text"
  	     android:layout_width="wrap_content"
  	     android:layout_height="wrap_content"
  	     android:layout_below="@+id/SpeechButton"
  	     android:layout_centerHorizontal="true"
  	     android:layout_marginTop="19dp"
  	     android:ems="10"
- 	     android:text="Hello world!" />
+ 	     android:text="@string/hello_world" />
 
  	 <Button
  	     android:id="@+id/TalkButton"
@@ -75,5 +58,27 @@
  	     android:layout_centerHorizontal="true"
  	     android:layout_marginTop="14dp"
  	     android:onClick="TTSTouch"
- 	     android:text="Say It" />
+ 	     android:text="@string/sayIt" />
+
+ 	 <Button
+ 	     android:id="@+id/List"
+ 	     android:layout_width="wrap_content"
+ 	     android:layout_height="wrap_content"
+ 	     android:layout_below="@+id/Flag"
+ 	     android:layout_centerHorizontal="true"
+ 	     android:layout_marginTop="47dp"
+ 	     android:onClick="ListView"
+ 	     android:text="@string/List" />
+
+ 	 <ImageButton
+ 	     android:id="@+id/SpeechButton"
+ 	     android:layout_width="fill_parent"
+ 	     android:layout_height="wrap_content"
+ 	     android:layout_below="@+id/List"
+ 	     android:layout_centerHorizontal="true"
+ 	     android:layout_margin="10dp"
+ 	     android:contentDescription="@string/desc"
+ 	     android:onClick="SpeechButton"
+ 	     android:src="@android:drawable/ic_btn_speak_now" />
+
 </RelativeLayout>

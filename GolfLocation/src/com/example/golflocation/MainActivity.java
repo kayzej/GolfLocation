@@ -27,7 +27,7 @@ public class MainActivity extends Activity implements OnInitListener {
 	private TextToSpeech tts;
 	
 	private GPSTracker gps;
-	
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -36,8 +36,9 @@ public class MainActivity extends Activity implements OnInitListener {
         //WindowManager.LayoutParams.FLAG_FULLSCREEN)
 		tts = new TextToSpeech(this, this);
 		gps = new GPSTracker(this);
-		setContentView(R.layout.activity_main);
 		
+		setContentView(R.layout.activity_main);
+
 		//View v = this.getCurrentFocus();
 		
 		//GPSRefresh(v);
@@ -45,7 +46,7 @@ public class MainActivity extends Activity implements OnInitListener {
 	
 	public void ListView(View view){
 		//Open the ListView
-		startActivity(new Intent(MainActivity.this,CourseList.class));
+		startActivity(new Intent(MainActivity.this, CourseList.class));
 	}
 	
 	public void GPSRefresh(View view){
@@ -72,7 +73,7 @@ public class MainActivity extends Activity implements OnInitListener {
 		
 		TextView text = (TextView) findViewById(R.id.label);
 		
-		text = (TextView) findViewById(R.id.label);
+		//text = (TextView) findViewById(R.id.label);
 		text.setText("longitude: " + along + " latitude: " + alat);
 	}
 
