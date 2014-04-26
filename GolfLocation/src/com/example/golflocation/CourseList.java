@@ -8,7 +8,6 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.TextView;
 
 public class CourseList extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +19,7 @@ public class CourseList extends Activity {
 
 		ListView menuList = (ListView) findViewById(R.id.ListView_Menu);
 		ArrayList<String> items = new ArrayList<String>();
+		items.add("Black Oak");
 		
 		ArrayAdapter<String> adapt = new ArrayAdapter<String>(this, R.layout.menu_item, items);
 		menuList.setAdapter(adapt);
@@ -31,8 +31,8 @@ public class CourseList extends Activity {
 	             // Note: if the list was built "by hand" the id could be used.
 	             // As-is, though, each item has the same id
 
-	             TextView textView = (TextView) itemClicked;
-	             String strText = textView.getText().toString();
+	             //TextView textView = (TextView) itemClicked;
+	             //String strText = textView.getText().toString();
 	             
 	             
 	         }

@@ -5,7 +5,7 @@
     android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="8"
+        android:minSdkVersion="11"
         android:targetSdkVersion="18" />
     
     <uses-feature android:name="android.hardware.location.gps" android:required="true" />
@@ -31,6 +31,10 @@
         <activity 
             android:name="com.example.golflocation.CourseList"
             android:label="@string/List">
+        </activity>
+        <activity 
+            android:name="com.example.golflocation.ItemView"
+            android:label="@string/ItemEdit">
         </activity>
         <activity 
             android:name="com.example.golflocation.Course1"

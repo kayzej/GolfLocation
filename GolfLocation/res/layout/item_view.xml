@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background" >
+
+ 	 <EditText
+ 	     android:id="@+id/Course_edit"
+ 	     android:layout_width="wrap_content"
+ 	     android:layout_height="wrap_content"
+ 	     android:background="@color/gray"
+ 	     android:layout_centerHorizontal="true"
+ 	     android:layout_marginTop="16dp"
+ 	     android:ems="10"
+ 	     android:inputType="text" 
+ 	     android:text="@string/Course" />
+
+ 	 <!-- <EditText
+ 	     android:id="@+id/Hole_edit"
+ 	     android:layout_width="wrap_content"
+ 	     android:layout_height="wrap_content"
+ 	     android:background="@color/gray"
+ 	     android:layout_below="@id/Course_edit"
+ 	     android:layout_centerHorizontal="true"
+ 	     android:layout_marginTop="16dp"
+ 	     android:ems="10"
+ 	     android:inputType="text" 
+ 	     android:text="@string/Hole" /> -->
+ 	  
+ 	 <NumberPicker
+ 	     android:id="@+id/Hole_edit"
+ 	     android:layout_width="wrap_content"
+ 	     android:layout_height="wrap_content"
+ 	     android:layout_below="@+id/Course_edit"
+ 	     android:layout_centerHorizontal="true"
+ 	     android:background="@color/gray"
+ 	     android:layout_marginTop="18dp" />
+ 	 
+ 	 <EditText
+ 	     android:id="@+id/Type_edit"
+ 	     android:layout_width="wrap_content"
+ 	     android:layout_height="wrap_content"
+ 	     android:background="@color/gray"
+ 	     android:layout_below="@id/Hole_edit"
+ 	     android:layout_centerHorizontal="true"
+ 	     android:layout_marginTop="16dp"
+ 	     android:ems="10"
+ 	     android:inputType="text" 
+ 	     android:text="@string/Type" />
+
+ 	 <TextView
+ 	     android:id="@+id/GPSView"
+ 	     android:layout_width="fill_parent"
+ 	     android:layout_height="wrap_content"
+ 	     android:layout_alignLeft="@+id/Type_edit"
+ 	     android:layout_alignRight="@+id/Type_edit"
+ 	     android:layout_below="@id/GPSRefresh"
+ 	     android:layout_marginTop="21dp"
+ 	     android:background="@color/gray"
+ 	     android:gravity="center"
+ 	     android:text="@string/Golf" />
+ 	 
+ 	 <Button
+ 	     android:id="@+id/Add"
+ 	     android:layout_width="wrap_content"
+ 	     android:layout_height="wrap_content"
+ 	     android:layout_alignLeft="@+id/GPSView"
+ 	     android:layout_alignRight="@+id/GPSView"
+ 	     android:layout_below="@id/GPSView"
+ 	     android:layout_marginTop="49dp"
+ 	     android:background="@color/gray"
+ 	     android:onClick="commit"
+ 	     android:text="@string/GPSAdd" />
+
+ 	 <Button
+ 	     android:id="@+id/GPSRefresh"
+ 	     android:layout_width="wrap_content"
+ 	     android:layout_height="wrap_content"
+ 	     android:layout_alignLeft="@+id/Type_edit"
+ 	     android:layout_alignRight="@+id/Type_edit"
+ 	     android:layout_below="@+id/Type_edit"
+ 	     android:layout_marginTop="21dp"
+ 	     android:background="@color/gray"
+ 	     android:onClick="GPSRefresh"
+ 	     android:text="@string/GPSRefresh" />
+ 	 
+</RelativeLayout>

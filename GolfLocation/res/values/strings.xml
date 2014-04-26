@@ -13,4 +13,10 @@
 	<string name="menu_course4">Course4</string>
 	<string name="GPSRefresh">Refresh GPS</string>
 	<string name="sayIt">Say It!</string>
+	
+	<string name="Course">Input Course</string>
+	<string name="Hole">Input Hole</string>
+	<string name="Type">Input Type</string>
+	<string name="GPSAdd">Add Entry to DB</string>
+	<string name="ItemEdit">Add new Item</string>
 </resources>

@@ -1,61 +1,61 @@
 package com.example.golflocation;
 
-import android.R.string;
-
 public class Item {
-	double frontLat;
-	double backLat;
-	double centerLat;
-	double leftLat;
-	double rightLat;
-	
-	double frontLong;
-	double backLong;
-	double centerLong;
-	double leftLong;
-	double rightLong;
-	
-	string type;
+	String course;
+	int hole;
+	String type;
+	double latitude;
+	double longitude;
 	
 	public Item(){
-		this.frontLat = 0.0;
-		this.frontLong = 0.0;
-		this.backLat = 0.0;
-		this.backLong = 0.0;
-		this.leftLat = 0.0;
-		this.leftLong = 0.0;
-		this.rightLat = 0.0;
-		this.rightLong = 0.0;
-		this.centerLat = 0.0;
-		this.centerLong = 0.0;
+		
 	}
 	
-	public void setFront(double alat, double along){
-		this.frontLat = alat;
-		this.frontLong = along;
+	public Item(String aCourse, int aHole, String aType, double aLatitude, double aLongitude){
+		this.course = aCourse;
+		this.hole = aHole;
+		this.type = aType;
+		this.latitude = aLatitude;
+		this.longitude = aLongitude;
 	}
 	
-	public void setBack(double alat, double along){
-		this.backLat = alat;
-		this.backLong = along;
+	public String getCourse() {
+		return course;
 	}
-	
-	public void setRight(double alat, double along){
-		this.rightLat = alat;
-		this.rightLong = along;
+
+	public void setCourse(String course) {
+		this.course = course;
 	}
-	
-	public void setLeft(double alat, double along){
-		this.leftLat = alat;
-		this.leftLong = along;
+
+	public int getHole() {
+		return hole;
 	}
-	
-	public void setCenter(double alat, double along){
-		this.centerLat = alat;
-		this.centerLong = along;
+
+	public void setHole(int hole) {
+		this.hole = hole;
 	}
-	
-	public void setType(string a){
-		this.type = a;
+
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
+
+	public double getLatitude() {
+		return latitude;
+	}
+
+	public void setLatitude(double latitude) {
+		this.latitude = latitude;
+	}
+
+	public double getLongitude() {
+		return longitude;
+	}
+
+	public void setLongitude(double longitude) {
+		this.longitude = longitude;
 	}
 }

@@ -49,6 +49,11 @@ public class MainActivity extends Activity implements OnInitListener {
 		startActivity(new Intent(MainActivity.this, CourseList.class));
 	}
 	
+	public void ItemView(View view){
+		//Open the ListView
+		//startActivity(new Intent(MainActivity.this, ItemView.class));
+	}
+	
 	public void GPSRefresh(View view){
 	
 		String alat;

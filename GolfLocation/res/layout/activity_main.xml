@@ -70,11 +70,21 @@
  	     android:onClick="ListView"
  	     android:text="@string/List" />
 
+ 	 <Button
+ 	     android:id="@+id/ItemEdit"
+ 	     android:layout_width="wrap_content"
+ 	     android:layout_height="wrap_content"
+ 	     android:layout_below="@id/List"
+ 	     android:layout_centerHorizontal="true"
+ 	     android:layout_marginTop="47dp"
+ 	     android:onClick="ItemView"
+ 	     android:text="@string/ItemEdit" />
+ 	 
  	 <ImageButton
  	     android:id="@+id/SpeechButton"
  	     android:layout_width="fill_parent"
  	     android:layout_height="wrap_content"
- 	     android:layout_below="@+id/List"
+ 	     android:layout_below="@id/ItemEdit"
  	     android:layout_centerHorizontal="true"
  	     android:layout_margin="10dp"
  	     android:contentDescription="@string/desc"
